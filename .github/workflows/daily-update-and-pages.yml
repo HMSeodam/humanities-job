@@ -20,6 +20,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 55
     outputs:
       artifact-id: ${{ steps.upload.outputs.artifact-id }}
     steps:
@@ -33,19 +34,32 @@ jobs:
           cache: pip
 
       - name: 수집 도구 준비
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
 
       - name: 인문학 채용정보 갱신
         env:
-          MAX_DETAIL_PAGES: "120"
+          MAX_EXTERNAL_SEARCHES: "25"
+          DETAIL_CACHE_DAYS: "7"
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
         run: python scripts/update_jobs.py
+
+      - name: 대학 공식 공고와 외부 원문 분석
+        env:
+          MAX_EXTERNAL_SEARCHES: "25"
+          DETAIL_CACHE_DAYS: "7"
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: python scripts/enrich_jobs.py
 
       - name: 변경된 데이터 저장
         run: |
-          if ! git diff --quiet -- data/jobs.json; then
+          if ! git diff --quiet -- data/; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/jobs.json
+            git add data/jobs.json data/enrichment-cache.json data/institution-domains.json data/collection-status.json
             git commit -m "data: daily recruitment update"
             git push
           fi
