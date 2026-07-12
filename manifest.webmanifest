@@ -1,0 +1,10 @@
+{
+  "name": "인문잡 — 인문학 채용정보",
+  "short_name": "인문잡",
+  "description": "역사학·철학·미술사학·문헌정보학 채용정보 큐레이션",
+  "lang": "ko",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f4ee",
+  "theme_color": "#193a31"
+}
