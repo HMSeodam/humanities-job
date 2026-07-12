@@ -54,7 +54,10 @@ jobs:
           DETAIL_CACHE_DAYS: "7"
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-        run: python scripts/enrich_jobs.py
+        run: |
+          if ! python scripts/enrich_jobs.py; then
+            echo "::warning::일부 대학 원문 분석에 실패했지만 확보한 데이터로 Pages 배포를 계속합니다."
+          fi
 
       - name: 변경된 데이터 저장
         run: |
