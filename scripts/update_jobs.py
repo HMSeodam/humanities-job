@@ -10,6 +10,7 @@ import json
 import os
 import re
 import sys
+import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urljoin
@@ -55,7 +56,10 @@ HEADERS = {
     # 브라우저와 동일한 HTML 표현으로 하루 한 번만 요청한다.
     "User-Agent": os.getenv("SCRAPER_USER_AGENT", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126.0 Safari/537.36"),
     "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.5",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Referer": "https://www.hibrain.net/recruitment",
 }
+MAX_LIST_RETRIES = int(os.getenv("MAX_LIST_RETRIES", "3"))
 
 
 def clean(value: str | None) -> str:
@@ -171,14 +175,43 @@ def school_from_title(title: str) -> str:
     return clean(match.group(1)) if match else clean(title.split(" ")[0])
 
 
+def fetch_listing(session: requests.Session, params: dict) -> requests.Response:
+    """목록 요청을 짧게 재시도한다.
+
+    하이브레인넷 CDN이 GitHub Actions 주소를 간헐적으로 403 처리하는 경우가 있어
+    첫 요청 전에 사이트 쿠키를 준비하고, 403/429/5xx만 제한적으로 재시도한다.
+    """
+    last_response: requests.Response | None = None
+    last_error: requests.RequestException | None = None
+    try:
+        session.get("https://www.hibrain.net/", timeout=15)
+    except requests.RequestException:
+        pass
+    for attempt in range(1, MAX_LIST_RETRIES + 1):
+        try:
+            response = session.get(LIST_URL, params=params, timeout=30)
+            last_response = response
+            if response.status_code not in {403, 429} and response.status_code < 500:
+                response.raise_for_status()
+                return response
+        except requests.RequestException as exc:
+            last_error = exc
+        if attempt < MAX_LIST_RETRIES:
+            time.sleep(attempt * 3)
+    if last_response is not None:
+        last_response.raise_for_status()
+    if last_error is not None:
+        raise last_error
+    raise RuntimeError("목록 요청에 응답이 없습니다.")
+
+
 def listing_items(session: requests.Session) -> list[dict]:
     found: dict[str, dict] = {}
     errors = []
     for field, filters in SEARCHES:
         params = {"listType": "ING", "limit": "100", **filters}
         try:
-            response = session.get(LIST_URL, params=params, timeout=25)
-            response.raise_for_status()
+            response = fetch_listing(session, params)
         except requests.RequestException as exc:
             errors.append(f"{field}/{filters}: {exc}")
             continue
@@ -239,8 +272,26 @@ def main() -> int:
     try:
         jobs = listing_items(session)
     except RuntimeError as exc:
-        print(f"[보존] {exc}", file=sys.stderr)
-        return 1
+        # 원본 사이트의 일시 차단 때문에 기존 정상 데이터와 Pages 배포까지 잃지 않는다.
+        # 다음 예약 실행에서 다시 신규 목록 수집을 시도하고, 이번 실행은 기존 목록을
+        # 외부 대학 공식 공고 보강 단계로 넘긴다.
+        try:
+            payload = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            print(f"[실패] 기존 데이터도 없어 보존할 수 없습니다. {exc}", file=sys.stderr)
+            return 1
+        if not payload.get("jobs"):
+            print(f"[실패] 보존할 기존 공고가 없습니다. {exc}", file=sys.stderr)
+            return 1
+        payload["sourceStatus"] = "stale-preserved"
+        payload["lastCollectionAttemptAt"] = datetime.now(KST).isoformat()
+        payload["notice"] = (
+            "하이브레인넷이 자동 요청을 일시 차단하여 직전 정상 목록을 유지했습니다. "
+            "대학·기관 공식 원문 보강과 사이트 배포는 계속되며 다음 예약 실행에서 다시 시도합니다."
+        )
+        OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"::warning::하이브레인넷 목록 수집 차단으로 기존 {len(payload['jobs'])}건을 보존합니다. {exc}")
+        return 0
     # 상세 페이지는 CloudFront 정책에 따라 자동 요청이 차단될 수 있다. 명시적으로
     # 활성화한 배포 환경에서만 시도하고, 실패하면 목록 정보는 그대로 유지한다.
     if os.getenv("ENABLE_DETAIL_FETCH", "false").lower() == "true":
