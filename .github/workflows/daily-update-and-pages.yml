@@ -25,10 +25,12 @@ jobs:
       artifact-id: ${{ steps.upload.outputs.artifact-id }}
     steps:
       - name: 저장소 가져오기
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Python 준비
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -61,7 +63,29 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add data/jobs.json data/enrichment-cache.json data/institution-domains.json data/collection-status.json
             git commit -m "data: daily recruitment update"
-            git push
+
+            PUSHED=false
+            for ATTEMPT in 1 2 3; do
+              echo "데이터 push 시도 ${ATTEMPT}/3"
+              git fetch origin main
+
+              if ! git rebase origin/main; then
+                git rebase --abort || true
+                echo "::warning::원격 main과 데이터 커밋이 충돌했습니다. Pages 배포는 현재 생성한 데이터로 계속합니다."
+                break
+              fi
+
+              if git push origin HEAD:main; then
+                PUSHED=true
+                break
+              fi
+
+              sleep $((ATTEMPT * 3))
+            done
+
+            if [ "$PUSHED" != "true" ]; then
+              echo "::warning::데이터 커밋을 저장소에 반영하지 못했지만 Pages 배포는 계속합니다."
+            fi
           fi
 
       - name: GitHub Pages 설정
