@@ -1,10 +1,38 @@
-const CACHE="humanities-jobs-v1";
-const APP=["./","index.html","manifest.webmanifest","data/jobs.json"];
-self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(APP))));
-self.addEventListener("activate",event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));
+const CACHE="humanities-jobs-v3";
+const APP=["index.html","manifest.webmanifest"];
+self.addEventListener("install",event=>event.waitUntil(
+  caches.open(CACHE).then(cache=>cache.addAll(APP)).then(()=>self.skipWaiting())
+));
+self.addEventListener("activate",event=>event.waitUntil(
+  caches.keys()
+    .then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key))))
+    .then(()=>self.clients.claim())
+));
 self.addEventListener("fetch",event=>{
   if(event.request.url.includes("data/jobs.json")){
-    event.respondWith(fetch(event.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(event.request,copy));return r}).catch(()=>caches.match(event.request)));
+    const canonical=new URL("data/jobs.json",self.registration.scope).href;
+    event.respondWith(
+      fetch(event.request,{cache:"no-store"})
+        .then(response=>{
+          if(!response.ok)throw new Error("data response failed");
+          const copy=response.clone();
+          caches.open(CACHE).then(cache=>cache.put(canonical,copy));
+          return response;
+        })
+        .catch(()=>caches.match(canonical))
+    );
+    return;
+  }
+  if(event.request.mode==="navigate"){
+    event.respondWith(
+      fetch(event.request,{cache:"no-store"})
+        .then(response=>{
+          const copy=response.clone();
+          caches.open(CACHE).then(cache=>cache.put("index.html",copy));
+          return response;
+        })
+        .catch(()=>caches.match("index.html"))
+    );
     return;
   }
   event.respondWith(caches.match(event.request).then(cached=>cached||fetch(event.request)));

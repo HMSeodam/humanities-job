@@ -62,7 +62,7 @@
     $$(".filter").forEach(b=>b.onclick=()=>{$$(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");state.field=b.dataset.field;render()});$("#search").oninput=e=>{state.query=e.target.value.trim().toLowerCase();render()};$("#sort").onchange=e=>{state.sort=e.target.value;render()};$$("#roleFilters input").forEach(c=>c.onchange=()=>{c.checked?state.roles.add(c.value):state.roles.delete(c.value);render()});$("#filterToggle").onclick=()=>{$("#quickFilters").classList.toggle("open");$("#sidebar").classList.toggle("open")};
     function openNotify(){$$(".switch").forEach(b=>b.classList.toggle("on",!!state.settings[b.dataset.setting]));$("#notifyModal").showModal()}$("#notifyButton").onclick=openNotify;$("#sideNotify").onclick=openNotify;$$('[data-close]').forEach(b=>b.onclick=()=>b.closest("dialog").close());$$('.switch').forEach(b=>b.onclick=()=>{b.classList.toggle("on");state.settings[b.dataset.setting]=b.classList.contains("on");localStorage.setItem("notificationSettings",JSON.stringify(state.settings))});
     $("#enableNotifications").onclick=async()=>{if(!("Notification" in window)){toast("이 브라우저는 알림을 지원하지 않습니다.");return}const p=await Notification.requestPermission();toast(p==="granted"?"알림 권한이 허용되었습니다.":"알림 권한이 허용되지 않았습니다.")};
-    if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});load();
+    if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js?v=3",{updateViaCache:"none"}).catch(()=>{});load();
   </script>
 </body>
 </html>

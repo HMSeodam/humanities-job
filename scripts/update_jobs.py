@@ -240,7 +240,7 @@ def main() -> int:
         jobs = listing_items(session)
     except RuntimeError as exc:
         print(f"[보존] {exc}", file=sys.stderr)
-        return 0
+        return 1
     # 상세 페이지는 CloudFront 정책에 따라 자동 요청이 차단될 수 있다. 명시적으로
     # 활성화한 배포 환경에서만 시도하고, 실패하면 목록 정보는 그대로 유지한다.
     if os.getenv("ENABLE_DETAIL_FETCH", "false").lower() == "true":
