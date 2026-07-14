@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-07-14T20:39:50.408849+09:00",
+  "updatedAt": "2026-07-14T20:46:24.996584+09:00",
   "listed": 55,
   "checkedThisRun": 25,
   "enriched": 5,
-  "notFound": 20,
-  "errors": 0
+  "notFound": 0,
+  "errors": 25
 }
