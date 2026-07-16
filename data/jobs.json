@@ -1,8 +1,8 @@
 {
   "updatedAt": "2026-07-16T22:36:20.768709+09:00",
-  "sourceStatus": "live-list",
+  "sourceStatus": "stale-preserved",
   "source": "https://www.hibrain.net/recruitment/recruits",
-  "notice": "하이브레인넷 검색 목록 자동 수집. 인원·학과·지원방법은 원문 확인 필요.",
+  "notice": "하이브레인넷이 자동 요청을 일시 차단하여 직전 정상 목록을 유지했습니다. 대학·기관 공식 원문 보강과 사이트 배포는 계속되며 다음 예약 실행에서 다시 시도합니다.",
   "jobs": [
     {
       "id": "3589569",
@@ -609,13 +609,22 @@
       "deadlineNote": "",
       "posted": "2026-07-15",
       "location": "미기재",
-      "method": "하이브레인넷 원문에서 확인",
-      "applyUrl": "https://www.hibrain.net/recruitment/recruits/3590155?pagekey=3590155&keyword=%EB%AC%B8%ED%97%8C%EC%A0%95%EB%B3%B4&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
+      "method": "공식 공고에서 확인",
+      "applyUrl": "https://www.swu.ac.kr/swu/731/subview.do",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3590155?pagekey=3590155&keyword=%EB%AC%B8%ED%97%8C%EC%A0%95%EB%B3%B4&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
-      "qualifications": [],
-      "documents": []
+      "collectionLevel": "외부 원문 자동 수집",
+      "qualifications": [
+        "현재 본교 임용 중인 강사는 강사 공채에 지원할 수 없음",
+        "접수 기간",
+        "인터넷 접수",
+        ") : 2026.7.14.(",
+        ") 11:00~7.21.("
+      ],
+      "documents": [],
+      "officialUrl": "https://www.swu.ac.kr/swu/3052/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGc3d1JTJGMjYwJTJGMTM3NjQ1JTJGYXJ0Y2xWaWV3LmRvJTNGcGFnZSUzRDElMjZmaW5kVHlwZSUzRCUyNmZpbmRXb3JkJTNEJTI2ZmluZENsU2VxJTNEJTI2ZmluZE9wbndyZCUzRCUyNnJnc0JnbmRlU3RyJTNEJTI2cmdzRW5kZGVTdHIlM0QlMjZwYXNzd29yZCUzRCUyNg%3D%3D",
+      "externalStatus": "found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3590580",
@@ -634,9 +643,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3590580?pagekey=3590580&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3590580?pagekey=3590580&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3589921",
@@ -655,9 +666,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3589921?pagekey=3589921&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3589921?pagekey=3589921&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3588966",
@@ -676,9 +689,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3588966?pagekey=3588966&keyword=%EA%B8%B0%EB%A1%9D%EA%B4%80%EB%A6%AC&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3588966?pagekey=3588966&keyword=%EA%B8%B0%EB%A1%9D%EA%B4%80%EB%A6%AC&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3590322",
@@ -693,19 +708,29 @@
       "deadlineNote": "",
       "posted": "2026-07-15",
       "location": "미기재",
-      "method": "하이브레인넷 원문에서 확인",
-      "applyUrl": "https://www.hibrain.net/recruitment/recruits/3590322?pagekey=3590322&keyword=%EB%8F%84%EC%84%9C%EA%B4%80&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
+      "method": "공식 공고에서 확인",
+      "applyUrl": "https://www.tsu.ac.kr/tsumain/contents/sub/87",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3590322?pagekey=3590322&keyword=%EB%8F%84%EC%84%9C%EA%B4%80&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
-      "qualifications": [],
-      "documents": []
+      "collectionLevel": "외부 원문 자동 수집",
+      "qualifications": [
+        "사립학교 교원임용에 결격사유가 없는 자",
+        "고등교육법 시행령",
+        "조 및"
+      ],
+      "documents": [
+        "강사 신규채용 지원서",
+        "최종학력증명서"
+      ],
+      "officialUrl": "https://www.tsu.ac.kr/tpost/69233/46",
+      "externalStatus": "found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3589456",
       "school": "김천대학교",
       "college": "",
-      "department": "상세 공고 확인",
+      "department": "계약직 연구원",
       "title": "김천대학교 계약직 연구원 모집",
       "field": "문헌정보학",
       "role": "연구원",
@@ -714,13 +739,23 @@
       "deadlineNote": "",
       "posted": "2026-07-13",
       "location": "미기재",
-      "method": "하이브레인넷 원문에서 확인",
-      "applyUrl": "https://www.hibrain.net/recruitment/recruits/3589456?pagekey=3589456&keyword=%EB%AC%B8%ED%97%8C%EC%A0%95%EB%B3%B4&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
+      "method": "공식 공고에서 확인",
+      "applyUrl": "https://www.gimcheon.ac.kr/_prog/bbs/?mode=V&site_dvs_cd=gimcheon&menu_dvs_cd=050103&code=050103&no=13379#txt",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3589456?pagekey=3589456&keyword=%EB%AC%B8%ED%97%8C%EC%A0%95%EB%B3%B4&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "외부 원문 자동 수집",
       "qualifications": [],
-      "documents": []
+      "documents": [
+        "합격자조회",
+        "성적산출하기",
+        "전년도입시결과",
+        "입학상담",
+        "대학/대학원 소개",
+        "찾아오시는길"
+      ],
+      "officialUrl": "https://www.gimcheon.ac.kr/_prog/bbs/?mode=V&site_dvs_cd=gimcheon&menu_dvs_cd=050103&code=050103&no=13379",
+      "externalStatus": "found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3590340",
@@ -739,9 +774,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3590340?pagekey=3590340&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3590340?pagekey=3590340&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3590353",
@@ -760,9 +797,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3590353?pagekey=3590353&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3590353?pagekey=3590353&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3589450",
@@ -781,9 +820,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3589450?pagekey=3589450&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3589450?pagekey=3589450&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3588854",
@@ -802,9 +843,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3588854?pagekey=3588854&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3588854?pagekey=3588854&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3587097",
@@ -819,13 +862,30 @@
       "deadlineNote": "",
       "posted": "2026-07-01",
       "location": "미기재",
-      "method": "하이브레인넷 원문에서 확인",
-      "applyUrl": "https://www.hibrain.net/recruitment/recruits/3587097?pagekey=3587097&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
+      "method": "KBSI채용 홈페이지 온라인 접수(https://kbsi.fairy.im) ※방문및우편접수는실시하지않음○접수기간 :‘26.05.04.(월)14:00~05.19.(화)16:00(마감시각 이후 접수 불가)",
+      "applyUrl": "https://www.kbsi.re.kr/fileDownload?fileKey=DARpi5ozuy&fileId=1&paramMenuId=MENU002051102000000",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3587097?pagekey=3587097&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
-      "qualifications": [],
-      "documents": []
+      "collectionLevel": "외부 원문 자동 수집",
+      "qualifications": [
+        "3.응시 방법○접수방법 :KBSI채용 홈페이지 온라인 접수(https://kbsi.fairy.im) ※방문및우편접수는실시하지않음○접수기간 :‘26.05.04.(월)14:00~05.19.(화)16:00(마감시각 이후 접수 불가)",
+        "구분 세부 내용",
+        "4.채용절차",
+        "<정부블라인드채용가이드라인준수>-「공공기관블라인드채용가이드라인」(고용노동부,2022.11.03.)에따라채용에서평등하게기회가보장되고,공정한과정을통해누구나당당하게실력으로경쟁할기회를보장하기위함-입사지원서․면접에서편견이개입될수있는인적사항(성별,연령,출신지역,가족관계,신체적조건,학력,재산등)차별적요인을제외함(다만,신체적조건‧",
+        "학력은채용직무를수행하는데있어반드시필요하다고인정될경우예외로함)-연구개발목적기관이연구인력채용시,직무수행에필요하다고인정하는정보의범위를별도로정할수있고,주무부처의장이인정하는정보에대하여입사지원서에기재를요구하거나면접중에질문하거나해당정보를면접위원에게제공할수있음",
+        "서류전형"
+      ],
+      "documents": [
+        "채용절차의공정화에관한법률｣",
+        "제11조1항에의거하여원본채용증빙서류(채용사이트또는이메일로제출된서류및제출요구가없음에도자발적으로제출한서류제외)의반환을청구하는경우채용여부확정일로부터15일이내본인확인후반환가능하며,채용서류의반환청구기간경과시파기(단,소요비용은응시자가부담할수있음.반환절차에관한세부사항은채용사이트공지사항에서확인)",
+        "전형절차일정비고채용공고 및 응시원서 접수‘26.05.04.(월)~05.19.(화)-시작 14:00/마감 16:00응시원서 적격 확인05.20.(수)~05.26.(화)서류전형06.01.(월)~06.02.(화)서류전형 합격자 발표06.08.(월) -서류전형 합격자 대상면접전형06.15.(월)~06.17.(수)면접전형 합격자 발표06.22.(월)임용예정일07.01.(수)예정",
+        "7.채용조건 및 보수수준",
+        "채용절차의공정화에관한법률｣",
+        "제11조1항에의거하여원본채용증빙서류의반환을청구하는경우에는본인확인후반환가능(세부사항은채용사이트공지사항에서확인)"
+      ],
+      "officialUrl": "https://www.kbsi.re.kr/fileDownload?fileKey=DARpi5ozuy&fileId=1&paramMenuId=MENU002051102000000",
+      "externalStatus": "found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3587208",
@@ -844,9 +904,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3587208?pagekey=3587208&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3587208?pagekey=3587208&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3570241",
@@ -865,9 +927,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3570241?pagekey=3570241&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3570241?pagekey=3570241&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3565605",
@@ -886,9 +950,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3565605?pagekey=3565605&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3565605?pagekey=3565605&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3586095",
@@ -903,13 +969,16 @@
       "deadlineNote": "",
       "posted": "2026-06-18",
       "location": "미기재",
-      "method": "하이브레인넷 원문에서 확인",
-      "applyUrl": "https://www.hibrain.net/recruitment/recruits/3586095?pagekey=3586095&keyword=%EB%AF%B8%EC%88%A0%EC%82%AC&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
+      "method": "3. 13.∼3. 17.",
+      "applyUrl": "https://mediahub.seoul.go.kr/news/citizen/citizenTagNewsList.do?tagName=지방자치단체원서접수",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3586095?pagekey=3586095&keyword=%EB%AF%B8%EC%88%A0%EC%82%AC&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "외부 원문 자동 수집",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "officialUrl": "https://mediahub.seoul.go.kr/archives/2006975",
+      "externalStatus": "found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3589742",
@@ -928,9 +997,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3589742?pagekey=3589742&keyword=%EB%B0%95%EB%AC%BC%EA%B4%80&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3589742?pagekey=3589742&keyword=%EB%B0%95%EB%AC%BC%EA%B4%80&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3563472",
@@ -949,9 +1020,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3563472?pagekey=3563472&keyword=%EB%B0%95%EB%AC%BC%EA%B4%80&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3563472?pagekey=3563472&keyword=%EB%B0%95%EB%AC%BC%EA%B4%80&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3589647",
@@ -970,9 +1043,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3589647?pagekey=3589647&keyword=%EB%B0%95%EB%AC%BC%EA%B4%80&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3589647?pagekey=3589647&keyword=%EB%B0%95%EB%AC%BC%EA%B4%80&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3590107",
@@ -991,9 +1066,11 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3590107?pagekey=3590107&keyword=%EB%AC%B8%ED%97%8C%EC%A0%95%EB%B3%B4&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3590107?pagekey=3590107&keyword=%EB%AC%B8%ED%97%8C%EC%A0%95%EB%B3%B4&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3590384",
@@ -1012,15 +1089,17 @@
       "applyUrl": "https://www.hibrain.net/recruitment/recruits/3590384?pagekey=3590384&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3590384?pagekey=3590384&mjrRelCds=H02&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "목록 수집 · 공식 원문 탐색 실패",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "externalStatus": "not-found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     },
     {
       "id": "3587903",
       "school": "고려대학교",
       "college": "",
-      "department": "상세 공고 확인",
+      "department": "법학연구원",
       "title": "고려대학교 법학연구원 연구원/원외연구위원 모집",
       "field": "문헌정보학",
       "role": "연구원",
@@ -1029,21 +1108,25 @@
       "deadlineNote": "",
       "posted": "2026-07-01",
       "location": "미기재",
-      "method": "하이브레인넷 원문에서 확인",
-      "applyUrl": "https://www.hibrain.net/recruitment/recruits/3587903?pagekey=3587903&keyword=%EB%8F%84%EC%84%9C%EA%B4%80&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
+      "method": "방문제출 및 등기 우편",
+      "applyUrl": "https://kulri.korea.ac.kr/kulri/business/Support.do",
       "sourceUrl": "https://www.hibrain.net/recruitment/recruits/3587903?pagekey=3587903&keyword=%EB%8F%84%EC%84%9C%EA%B4%80&listType=ING&pagesize=10&sortType=SORTDTM&limit=100&displayType=TIT&siteid=1&page=1",
       "verified": false,
-      "collectionLevel": "목록 수집",
+      "collectionLevel": "외부 원문 자동 수집",
       "qualifications": [],
-      "documents": []
+      "documents": [],
+      "officialUrl": "https://kulri.korea.ac.kr/kulri/board/Notice.do?mode=view&articleNo=812635&article.offset=0&articleLimit=10&totalNoticeYn=N&totalBoardNo=",
+      "externalStatus": "found",
+      "detailCheckedAt": "2026-07-16T22:44:07.246398+09:00"
     }
   ],
-  "detailsUpdatedAt": "2026-07-16T22:36:42.722128+09:00",
+  "detailsUpdatedAt": "2026-07-16T22:44:07.246398+09:00",
   "detailsStatus": {
     "listed": 46,
-    "checkedThisRun": 25,
-    "enriched": 8,
-    "notFound": 17,
+    "checkedThisRun": 21,
+    "enriched": 14,
+    "notFound": 15,
     "errors": 0
-  }
+  },
+  "lastCollectionAttemptAt": "2026-07-16T22:44:06.917731+09:00"
 }
